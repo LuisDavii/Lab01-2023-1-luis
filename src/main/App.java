@@ -1,4 +1,5 @@
 package main;
+
 public class App {
     public static int encontre(int[] arrayOrdenado, int num){
         for(int i=0;i<arrayOrdenado.length;i++){
@@ -19,9 +20,21 @@ public class App {
         return maior;
     }
 
-    public static Integer parMaisProximo(Integer[][] pares){
-        
-        return 1;
+    public static double parMaisProximo(Integer[][] pares){
+        double menor=-1;
+        for(int i=0;i<pares.length;i++){
+            for(int j=0;j<pares.length;i++){
+                if(i!=j){
+                    double comparar = Math.sqrt(Math.pow(pares[i][0]-pares[j][0],2)
+                    +Math.pow(pares[i][1]-pares[j][1],2));
+                    if(comparar<menor || menor<0){
+                        menor=comparar;
+                    }
+                }
+                
+            }
+        }
+        return menor;
     }
 }
 
